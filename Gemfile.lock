@@ -78,6 +78,7 @@ GEM
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.17.0)
@@ -99,11 +100,15 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    domain_name (0.6.20231109)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -127,6 +132,9 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    mime-types (3.5.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2023.1003)
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
@@ -140,6 +148,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
+    netrc (0.11.0)
     nio4r (2.6.1)
     nokogiri (1.15.5-x64-mingw-ucrt)
       racc (~> 1.4)
@@ -194,6 +203,11 @@ GEM
     regexp_parser (2.8.2)
     reline (0.4.0)
       io-console (~> 0.5)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.6)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -242,6 +256,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap
   capybara
   debug
@@ -249,6 +264,7 @@ DEPENDENCIES
   jbuilder
   puma (>= 5.0)
   rails (~> 7.1.2)
+  rest-client (~> 2.1)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

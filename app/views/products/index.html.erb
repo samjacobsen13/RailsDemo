@@ -1,0 +1,38 @@
+<div class="container">
+  <%= form_with(url: products_path, method: "get") do %>
+    <div class="input-group mb-3">
+      <%= text_field_tag(:search, params[:search], class: "form-control", placeholder: "Search by title") %>
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </div>
+  <% end %>
+
+  <% if @display_products.present? %>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <% @display_products.each do |product| %>
+        <div class="col">
+          <div class="card h-100">
+  <div  style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <%= image_tag product['image'], class: "img-fluid rounded-start", alt: product['title'], style: "max-height: 200px; object-fit: cover;" %>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= product['title'] %></h5>
+                    <p class="card-text">Price: $<%= product['price'] %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No products found.</p>
+  <% end %>
+</div>
+
+
+
+
