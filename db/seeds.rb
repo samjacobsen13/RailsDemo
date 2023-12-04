@@ -16,7 +16,3 @@ products_api.each do |product|
     description: product['description']
   )
 end
-
-
-
-

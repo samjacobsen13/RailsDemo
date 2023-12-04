@@ -8,10 +8,10 @@
 
   <% if @display_products.present? %>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <% @display_products.each do |product| %>
+      <% @display_products.uniq.each do |product| %>
         <div class="col">
           <div class="card h-100">
-  <div  style="max-width: 540px;">
+            <div style="max-width: 540px;">
               <div class="row g-0">
                 <div class="col-md-4">
                   <%= image_tag product['image'], class: "img-fluid rounded-start", alt: product['title'], style: "max-height: 200px; object-fit: cover;" %>
@@ -32,6 +32,8 @@
     <p>No products found.</p>
   <% end %>
 </div>
+
+
 
 
 

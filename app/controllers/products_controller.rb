@@ -1,19 +1,20 @@
-require 'net/http'
 require 'json'
+require 'net/http'
 
 class ProductsController < ApplicationController
-    def index
-      if params[:search].present?
-        @display_products = Product.filter_by_title(params[:search])
-      else
-        @display_products = fetch_products_from_api
-      end
+  def index
+    if params[:search].present?
+      @display_products = Product.filter_by_title(params[:search])
+    else
+      @display_products = fetch_products_from_api
     end
-    private
-  
-    def fetch_products_from_api
-      uri = URI('https://fakestoreapi.com/products')
-      response = Net::HTTP.get(uri)
-      JSON.parse(response)
-    end
-  end 
+  end
+
+  private
+
+  def fetch_products_from_api
+    uri = URI('https://fakestoreapi.com/products')
+    response = Net::HTTP.get(uri)
+    JSON.parse(response)
+  end
+end
