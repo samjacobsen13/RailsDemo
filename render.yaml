@@ -1,6 +1,6 @@
 databases:
   - name: railsdemo
-    databaseName: rails-demo
+    databaseName: railsdemo
     user: samj
 
 services:
